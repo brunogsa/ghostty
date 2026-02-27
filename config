@@ -1,0 +1,12 @@
+# Font — matching gnome-terminal's Inconsolata Medium 16
+font-family = Inconsolata
+font-size = 16
+
+# Theme — built-in green-on-black (replaces custom gnome-terminal palette)
+theme = Matrix
+
+# Background opacity — matching gnome-terminal's 14% transparency
+background-opacity = 0.86
+
+# Auto-launch tmux (matching gnome-terminal's custom-command behavior)
+command = tmux new-session -A -s main
