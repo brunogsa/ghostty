@@ -11,15 +11,9 @@ Cross-platform Ghostty terminal configuration and installer. Replicates my previ
 
 The script installs Ghostty, the Inconsolata font, and symlinks the config file to `~/.config/ghostty/config`. All steps are idempotent.
 
-## What It Configures
+## What It Can Configure
 
-| Setting | Value | Rationale |
-|---|---|---|
-| `font-family` | Inconsolata | Matches gnome-terminal's Inconsolata Medium |
-| `font-size` | 16 | Matches gnome-terminal's size |
-| `theme` | Matrix | Built-in green-on-black, replaces custom palette |
-| `background-opacity` | 0.86 | Matches gnome-terminal's 14% transparency |
-| `command` | `tmux new-session -A -s main` | Auto-launches/attaches tmux session |
+Font, theme, transparency, and more. See the [config](./config) file for current settings and Ghostty docs for all available options.
 
 ## Platforms
 
