@@ -21,11 +21,7 @@ The install script:
 
 ## Config
 
-Ghostty uses `key = value` syntax. The config replicates previous gnome-terminal settings:
-- Font: Inconsolata 16
-- Theme: Matrix (built-in green-on-black)
-- Opacity: 0.86
-- Auto-launches tmux: `tmux new-session -A -s main`
+Ghostty uses `key = value` syntax. Configures font, theme, opacity, and more.
 
 Always edit `~/ghostty/config` (source), never `~/.config/ghostty/config` (symlink target).
 
@@ -34,4 +30,4 @@ Always edit `~/ghostty/config` (source), never `~/.config/ghostty/config` (symli
 Follows the shared pattern across all five tooling repos:
 - `install.sh` detects OS via `detect-os.sh`, branches on macOS/Linux, uses idempotent checks, symlinks config at the end
 - `set -e` for fail-loud behavior
-- Config comments explain the "why" (what gnome-terminal behavior each setting replaces)
+- Config comments explain the "why"
