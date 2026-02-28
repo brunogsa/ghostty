@@ -3,7 +3,7 @@ font-family = Inconsolata
 font-size = 16
 
 # Theme — built-in green-on-black (replaces custom gnome-terminal palette)
-theme = Matrix
+theme = Monokai Remastered
 
 # Background opacity — matching gnome-terminal's 14% transparency
 background-opacity = 0.86
