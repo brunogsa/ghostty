@@ -1,11 +1,11 @@
-# Font — matching gnome-terminal's Inconsolata Medium 16
+# Font
 font-family = Inconsolata
 font-size = 16
 
-# Theme — built-in green-on-black (replaces custom gnome-terminal palette)
+# Theme
 theme = Monokai Remastered
 
-# Background opacity — matching gnome-terminal's 14% transparency
+# Background opacity
 background-opacity = 0.86
 
 # tmux auto-launch moved to .zshrc (Ghostty's command bypasses shell
