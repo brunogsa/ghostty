@@ -1,6 +1,6 @@
 # ghostty
 
-Cross-platform Ghostty terminal configuration and installer. Replicates my previous gnome-terminal setup (font, theme, opacity, auto-tmux) in Ghostty.
+Cross-platform Ghostty terminal configuration and installer.
 
 ## Setup
 
