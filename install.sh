@@ -24,7 +24,7 @@ if [[ "$OS" == "macos" ]]; then
     fi
 elif [[ "$OS" == "linux" ]]; then
     if ! command -v ghostty &> /dev/null; then
-        sudo snap install ghostty
+        sudo snap install --classic ghostty
     else
         echo "Ghostty already installed, skipping"
     fi
