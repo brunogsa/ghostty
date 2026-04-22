@@ -1,6 +1,7 @@
 # Font
 font-family = Inconsolata
-font-size = 16
+font-size = 15
+font-thicken = true
 
 # Theme
 theme = Monokai Remastered
