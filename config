@@ -9,5 +9,10 @@ theme = Monokai Remastered
 # Background opacity
 background-opacity = 0.86
 
+# Hide the GTK header bar entirely. Trade-off: the hamburger menu becomes
+# inaccessible (no keybinding fallback). Avoid combining with
+# gtk-tabs-location = hidden -- known to break (ghostty issue #3178).
+gtk-titlebar = false
+
 # tmux auto-launch moved to .zshrc (Ghostty's command bypasses shell
 # profile loading, so homebrew's tmux isn't in PATH)

@@ -24,22 +24,31 @@ if [[ "$OS" == "macos" ]]; then
     fi
 elif [[ "$OS" == "linux" ]]; then
     if ! command -v ghostty &> /dev/null; then
-        sudo snap install ghostty
+        sudo snap install --classic ghostty
     else
         echo "Ghostty already installed, skipping"
     fi
 fi
 
-# Install Inconsolata font if missing
-if ! fc-list | grep -qi 'inconsolata'; then
-    echo "Installing Inconsolata font..."
-    if [[ "$OS" == "macos" ]]; then
-        brew install font-inconsolata
-    elif [[ "$OS" == "linux" ]]; then
-        sudo apt-get install -y fonts-inconsolata
-    fi
+# Install Inconsolata with full weights
+# (Ubuntu's fonts-inconsolata ships single-weight only, breaking bold/italic in
+# the terminal. Use the Google Fonts multi-weight distribution instead.)
+if fc-list :family=Inconsolata 2>/dev/null | grep -qi 'style=Bold'; then
+    echo "Inconsolata (with bold variant) already installed, skipping"
 else
-    echo "Inconsolata font already installed, skipping"
+    echo "Installing Inconsolata (full weights)..."
+    if [[ "$OS" == "macos" ]]; then
+        brew install --cask font-inconsolata
+    elif [[ "$OS" == "linux" ]]; then
+        # User-level install takes precedence over any single-weight apt package
+        INCONSOLATA_DIR="$HOME/.local/share/fonts/inconsolata"
+        mkdir -p "$INCONSOLATA_DIR"
+        TMP_INCONSOLATA=$(mktemp -d)
+        git clone --depth 1 https://github.com/googlefonts/Inconsolata "$TMP_INCONSOLATA/Inconsolata"
+        find "$TMP_INCONSOLATA/Inconsolata" -name 'Inconsolata*.ttf' -exec cp {} "$INCONSOLATA_DIR/" \;
+        rm -rf "$TMP_INCONSOLATA"
+        fc-cache -f
+    fi
 fi
 
 # Symlink config
